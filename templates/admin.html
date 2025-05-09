@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Administrator
+{% endblock %}
+
+{% block main %}
+<div class="mb-3">
+    <h1>Welcome {{ admin_name }}</h1>
+</div>
+<div class="mb-3">
+    <table class="table table-striped">
+        <caption></caption>
+        <thead>
+            <tr>
+                <th class="text-start">Name</th>
+                <th class="text-end">Balance</th>
+                <th class="text-end">Deposit</th>
+                <th class="text-end">Withdraw</th>
+                <th class="text-end">View History</th>
+                <th class="text-end">Remove Child</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ table_data | safe }}
+        </tbody>
+    </table>
+</div>
+<div class="mb-3">
+    <a class="nav-link" href="/add"><button class="btn btn-primary">Add Child</button></a>
+</div>
+{% endblock %}

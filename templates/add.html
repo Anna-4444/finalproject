@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Child
+{% endblock %}
+
+{% block main %}
+    <form action="/add" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="childname" placeholder="Child's Name" type="text">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit" name="action" value="add">Add Child</button>
+            <button class="btn btn-primary" type="submit" name="action" value="cancel">Cancel</button>
+        </div>
+    </form>
+{% endblock %}

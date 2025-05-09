@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Remove Child
+{% endblock %}
+
+{% block main %}
+    <form action="/delete" method="post">
+        <input name="id" value="{{ child['id'] }}" type="hidden">
+        <div class="mb-3">
+            <h2>Are you sure you want to remove {{ child["username"] }} from your account? </h2>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit" name="action" value="delete">Yes</button>
+            <button class="btn btn-primary" type="submit" name="action" value="cancel">No</button>
+        </div>
+    </form>
+{% endblock %}

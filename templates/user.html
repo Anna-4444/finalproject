@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class="mb-3">
+        <h1>WELCOME {{ name }}</h1>
+    </div>
+    <div class="mb-3">
+        <h2>Your balance is {{ cash }}</h2>
+    </div>
+    <div class="mb-3">
+        <form action="/history" method="POST">
+            <input type="hidden" name="id" value="{{ id }}">
+            <input type="hidden" name="name" value="{{ name }}">
+            <button class="btn btn-primary">View Transactions</button>
+        </form>
+    </div>
+    <div class="mb-3">
+        <form action="/" method="POST">
+            <input type="hidden" name="id" value="{{ id }}">
+            <input type="hidden" name="name" value="{{ name }}">
+            <button class="btn btn-primary">Make A Request</button>
+        </form>
+    </div>
+{% endblock %}

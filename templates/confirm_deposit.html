@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Deposit
+{% endblock %}
+
+{% block main %}
+    <form action="/deposit" method="post">
+        <input name="id" value="{{ child['id'] }}" type="hidden">
+        <div class="mb-3">
+            <h2>How much would you like to deposit into {{ child["username"] }}'s account? </h2>
+        </div>
+        <div class="mb-3"> 
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="deposit" placeholder="Deposit Amount" type="number" step="0.01" min="1">   
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="comment" placeholder="Comment" type="text" maxlength="20">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit" name="action" value="deposit">Deposit</button>
+            <button class="btn btn-primary" type="submit" name="action" value="cancel">Cancel</button>
+        </div>
+    </form>
+{% endblock %}

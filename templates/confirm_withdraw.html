@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Withdraw
+{% endblock %}
+
+{% block main %}
+    <form action="/withdraw" method="post">
+        <input name="id" value="{{ child['id'] }}" type="hidden">
+        <div class="mb-3">
+            <h2>How much would you like to withdraw from {{ child["username"] }}'s account? </h2>
+        </div>
+        <div class="mb-3"> 
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="withdraw" placeholder="Withdrawal Amount" type="number" step="0.01" min="1">   
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="comment" placeholder="Comment" type="text" maxlength="20">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit" name="action" value="withdraw">Withdraw</button>
+            <button class="btn btn-primary" type="submit" name="action" value="cancel">Cancel</button>
+        </div>
+    </form>
+{% endblock %}

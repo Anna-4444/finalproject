@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<div class="mb-3">
+    <h1>Transaction history for {{ name }}</h1>
+</div>
+<div class="mb-3">
+    <table class="table table-striped">
+        <caption></caption>
+        <thead>
+            <tr>
+                <th class="text-start">Date</th>
+                <th class="text-end">Transaction</th>
+                <th class="text-end">Comment</th>
+                <th class="text-end">Balance</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ table_data | safe }}
+        </tbody>
+    </table>
+</div>
+<div class="mb-3">
+    <a class="nav-link" href="/"><button class="btn btn-primary">Home</button></a>
+</div>
+{% endblock %}
